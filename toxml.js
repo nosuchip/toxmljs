@@ -1,7 +1,7 @@
 function toXml(dict) {
     var enumerate = function(o, tag, callbackOpen, callbackClose, callbackContent) {
         for (var key in o) {
-            if (o[key] instanceof Array) {
+            if (Array.isArray(o[key])) {
                 callbackOpen(key + "s", o[key]);
                 enumerate(o[key], key, callbackOpen, callbackClose, callbackContent);
                 callbackClose(key + "s", o[key]);
